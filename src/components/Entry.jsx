@@ -1,11 +1,14 @@
+import AddTask from "./addTask";
 import TaskList from "./TaskList"
 
 const Entry = ({tasks,id,date}) =>{
-    return(
+    return(<>
         <div className="entry" key={id}>
         <h1>{date}</h1>
             <TaskList tasks={tasks} entryId={id}/>
         </div>
+        <AddTask entryId={id}/>
+        </>
     )
 
 
