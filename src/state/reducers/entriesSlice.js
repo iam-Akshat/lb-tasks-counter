@@ -1,44 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
-
-const initialState = {
-    entries:[
-        {
-            id:12,
-            date: new Date('2021','04','23').toDateString(),
-            tasks:[
-                {
-                    id:2,
-                    type:'exp',
-                    duration:10.2,
-                    count:2
-                },
-                {
-                    id:21,
-                    type:'sxs',
-                    duration:2,
-                    count:22
-                }
-            ]
-        },
-        {
-            id:11,
-            date: new Date('2021','02','23').toDateString(),
-            tasks:[
-                {
-                    id:1,
-                    type:'exp',
-                    duration:5,
-                    count:2
-                },
-                {
-                    id:2,
-                    type:'sxs',
-                    duration:1,
-                    count:6
-                }
-            ]
-        }
-    ]
+import { loadState } from "../../localStorage";
+const savedState = loadState();
+const initialState = savedState || {
+    entries:[]
 }
 
 const entriesSlice = createSlice({
