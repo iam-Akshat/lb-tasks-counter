@@ -66,9 +66,20 @@ const entriesSlice = createSlice({
                     })
                 }
             })
+        },
+        decrementTask(state,action){
+            state.entries.forEach((entry)=>{
+                if (entry.id === action.payload.entryId) {
+                    entry.tasks.forEach((task)=>{
+                        if(task.id === action.payload.taskId){
+                            task.count -= 1;
+                        }
+                    })
+                }
+            })
         }
     }
 })
 
-export const { addEntry, addTask,incrementTask } = entriesSlice.actions
+export const { addEntry, addTask,incrementTask, decrementTask } = entriesSlice.actions
 export default entriesSlice.reducer; 

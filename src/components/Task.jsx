@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { incrementTask } from "../state/reducers/entriesSlice";
+import { incrementTask , decrementTask} from "../state/reducers/entriesSlice";
 const buttonStyles = {
     height:'2rem',
     width:'2rem'
@@ -18,16 +18,24 @@ const Task = ({ id, type, duration, count, entryId }) => {
             entryId
         }))
     }
+    const handleDecrementClick = () =>{
+        dispatch(decrementTask({
+            taskId: id,
+            entryId
+        }))
+    }
+
     return (
         <div className="task" key={id} style={taskStyle}>
-            <button onClick={handleIncrementClick} style={buttonStyles}>+</button>
+            <button style={buttonStyles} onClick={handleDecrementClick}>-</button>
             <div>
             <p>Task type:{type}</p>
             <p>{duration} min</p>
             <p>Task count:{count}</p>
             </div>
             
-            <button style={buttonStyles}>-</button>
+            
+            <button onClick={handleIncrementClick} style={buttonStyles}>+</button>
         </div>
     )
 }
