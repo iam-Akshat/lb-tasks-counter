@@ -4,7 +4,7 @@ const initialState = {
     entries:[
         {
             id:12,
-            date: new Date('2021','04','23').toString(),
+            date: new Date('2021','04','23').toDateString(),
             tasks:[
                 {
                     id:2,
@@ -22,7 +22,7 @@ const initialState = {
         },
         {
             id:11,
-            date: new Date('2021','02','23').toString(),
+            date: new Date('2021','02','23').toDateString(),
             tasks:[
                 {
                     id:1,
@@ -47,7 +47,7 @@ const entriesSlice = createSlice({
     reducers:{
         addEntry(state,action){
             console.log(action.payload);
-            state.entries.push(action.payload)
+            state.entries.unshift(action.payload)
         },
         addTask(state,action){
             state.entries.forEach((entry)=>{
