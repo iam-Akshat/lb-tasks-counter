@@ -1,11 +1,13 @@
 import Task from "./Task"
 
-const TaskList = ({tasks,entryId}) =>{
-    const taskList = tasks.map(task =>{
-        return <Task {...task} entryId ={entryId}/>
+const TaskList = ({ tasks, entryId }) => {
+    const taskList = tasks.map(task => {
+        return <Task {...task} entryId={entryId} />
     })
     return (
-            taskList
+        <div className="task_list">
+            {taskList}
+        </div>
     )
 }
 
