@@ -1,9 +1,6 @@
 import { useDispatch } from "react-redux";
 import { incrementTask, decrementTask } from "../state/reducers/entriesSlice";
-const buttonStyles = {
-    height: '2rem',
-    width: '2rem'
-}
+
 const Task = ({ id, type, duration, count, entryId }) => {
     const dispatch = useDispatch()
     const handleIncrementClick = () => {
