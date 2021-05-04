@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 .entry {
   height: 100%;
@@ -45,4 +46,36 @@
 .minus:active{
   background-color: rgb(255, 114, 114);
   transform: scale(1.2);
+}
+.actions_holder{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 300px;
+  gap:0.5rem;
+}
+.actions_holder button{
+  padding: 0.5rem 0.77rem;
+  background-color: #008fe2;
+  transition: all 0.2 ease-in;
+  color: #f4f4f4;
+  border: none;
+}
+.actions_holder button:active{
+  background-color: #000000;
+}
+.copy_msg{
+  color: #f4f4f4;
+  background-color: #008fe2;
+  margin: 1rem 0;
+  padding: 0.5rem 0.7rem;
+  width: 200px;
+  animation: forwards fade-in 0.3s ease-in-out;
+}
+@keyframes fade-in {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
