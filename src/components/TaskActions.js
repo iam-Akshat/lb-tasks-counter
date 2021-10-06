@@ -1,20 +1,8 @@
 import { useState } from "react";
 import { useSelector } from "react-redux"
+import { countMinOrTasks } from "../utils/countMinOrTasks";
 
 
-const countMinOrTasks = (taskType, numOrMin, tasks) => {
-    const isMin = "min" === numOrMin
-    const expTasks = tasks.filter(task => task.type === taskType);
-    const result = expTasks.reduce((count, curTask) => {
-        if (isMin) {
-            count += curTask.count * +curTask.duration
-            return count;
-        }
-        count += curTask.count;
-        return count;
-    }, 0);
-    return result;
-}
 const TaskActions = ({ entryId }) => {
     const [showCopied,setShowCopied] = useState(false);
     const entries = useSelector((state) => state.entries.entries);

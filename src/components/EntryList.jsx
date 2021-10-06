@@ -7,7 +7,7 @@ const EntryList = () => {
     console.log(entryList);
     return (
         <div className="entry_list">
-            {entries.map(entry => <Entry {...entry} />)}
+            {entries.map((entry,idx) => <Entry {...entry} compact={idx !== 0} />)}
         </div>
 
     )
